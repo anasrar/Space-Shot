@@ -1,0 +1,92 @@
+@import url('//fonts.googleapis.com/css?family=Press+Start+2P');
+
+
+*, *::after, *::before {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box
+}
+html,body {
+  height: 100%
+}
+body {
+  background-color: rgba(0, 0, 0, 0.92);
+  font-family: 'Press Start 2P', cursive;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+#ship {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-image: url('../images/ship.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 70px;
+  height: 70px;
+  /* background-color: green; */
+  -webkit-animation: ship 0.4s step-start infinite;
+  animation: ship 0.4s step-start infinite;
+  z-index: 1000;
+}
+.enemy {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-image: url('../images/enemy.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 70px;
+  height: 70px;
+  /* background-color: green; */
+  -webkit-animation: ship 0.4s step-start infinite;
+  animation: ship 0.4s step-start infinite;
+  z-index: 9;
+}
+@-webkit-keyframes ship {
+  0% {background-position: 0 0}
+  50% {background-position: -70px 0;}
+  100% {background-position: 0 0;}
+}
+@keyframes ship {
+  0% {background-position: 0 0}
+  50% {background-position: -70px 0;}
+  100% {background-position: 0 0;}
+}
+.fire {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  -webkit-transition: top 0.1s linear;
+  transition: top 0.1s linear;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #0b0;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 12 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23afa' stroke-width='3' stroke-miterlimit='10' d='M5.5 0 L5.5 70'/%3E%3C/svg%3E");
+  width: 12px;
+  height: 70px;
+  z-index: 10;
+}
+.scoreboard {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+.hint {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+.hint > p {
+  margin: 0 0 1rem 0;
+}
